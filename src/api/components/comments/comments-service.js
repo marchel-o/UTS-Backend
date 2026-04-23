@@ -19,8 +19,30 @@ async function createComment(ticketId, userId, content) {
   }
 }
 
+async function updateComment(id, content) {
+  try {
+    const result = await commentsRepository.updateComment(id, content);
+    return result.modifiedCount > 0 || result.matchedCount > 0;
+  } catch (error) {
+    logger.error(`Gagal memperbarui komentar (ID: ${id}): ${error.message}`);
+    return false;
+  }
+}
+
+async function deleteComment(id) {
+  try {
+    const result = await commentsRepository.deleteComment(id);
+    return result.deletedCount > 0;
+  } catch (error) {
+    logger.error(`Gagal menghapus komentar (ID: ${id}): ${error.message}`);
+    return false;
+  }
+}
+
 module.exports = {
   getCommentsByTicket,
   getComment,
   createComment,
+  updateComment,
+  deleteComment,
 };
