@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const config = require('../core/config');
 const logger = require('../core/logger')('app');
 
+const seeder = require('./seeder');
+const usersSchema = require('./users-schema');
+const ticketsSchema = require('./tickets-schema');
+const commentsSchema = require('./comments-schema');
+const historySchema = require('./history-schema');
 
 const connectionString = new URL(config.database.connection);
 connectionString.pathname += config.database.name;
@@ -12,6 +17,11 @@ const db = mongoose.connection;
 
 const models = {
   mongoose,
+  Users: usersSchema(mongoose),
+  Tickets: ticketsSchema(mongoose),
+  Comments: commentsSchema(mongoose),
+  History: historySchema(mongoose),
+  seeder,
 };
 
 db.once('open', async () => {
