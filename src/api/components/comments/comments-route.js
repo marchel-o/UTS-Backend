@@ -9,4 +9,10 @@ module.exports = (app) => {
   route.get('/ticket/:ticketId', commentsController.getCommentsByTicket);
 
   route.post('/', commentsController.createComment);
+
+  // Update a comment
+  route.put('/:id', commentsController.updateComment);
+
+  // Delete a comment
+  route.delete('/:id', commentsController.deleteComment);
 };

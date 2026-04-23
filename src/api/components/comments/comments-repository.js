@@ -18,8 +18,18 @@ async function createComment(ticketId, userId, content) {
   });
 }
 
+async function updateComment(id, content) {
+  return Comments.updateOne({ _id: id }, { $set: { content } });
+}
+
+async function deleteComment(id) {
+  return Comments.deleteOne({ _id: id });
+}
+
 module.exports = {
   getCommentsByTicket,
   getComment,
   createComment,
+  updateComment,
+  deleteComment,
 };
