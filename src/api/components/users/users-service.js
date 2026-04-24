@@ -35,10 +35,36 @@ async function updateUser(_id, fullName, email, role) {
   }
 }
 
+async function deleteUser(_id) {
+  logger.info(`Menghapus pengguna dari database (ID: ${_id})`);
+  try {
+    const result = await usersRepository.deleteUser(_id);
+    return result.deletedCount > 0;
+  } catch (error) {
+    logger.error(`Gagal menghapus pengguna (ID: ${_id}): ${error.message}`);
+    return false;
+  }
+}
+
+async function changePassword(_id, password) {
+  logger.info(`Memperbarui password di database (ID: ${_id})`);
+  try {
+    const result = await usersRepository.changePassword(_id, password);
+    return result.modifiedCount > 0 || result.matchedCount > 0;
+  } catch (error) {
+    logger.error(
+      `Gagal memperbarui password pengguna (ID: ${_id}): ${error.message}`
+    );
+    return false;
+  }
+}
+
 module.exports = {
   getUsers,
   getUser,
   emailExists,
   createUser,
   updateUser,
+  changePassword,
+  deleteUser,
 };

@@ -1,47 +1,37 @@
 {
-  "name": "uts-backend",
+  "name": "uts-backend-programming",
   "version": "1.0.0",
   "description": "Node.js · Express.js · MongoDB + Mongoose",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint src/**"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marchel-o/UTS-Backend.git"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  
-  "bugs": {
-    "url": "https://github.com/marchel-o/UTS-Backend/issues"
-  },
-  "homepage": "https://github.com/marchel-o/UTS-Backend#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.22.1",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
-    "jsonwebtoken": "^9.0.3",
+    "jsonwebtoken": "^9.0.2",
     "method-override": "^3.0.0",
-    "mongoose": "^8.12.2",
+    "mongoose": "^8.13.0",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
-    "pino": "^9.6.0",
-    "pino-http": "^10.4.0"
+    "pino": "^9.7.0",
+    "pino-http": "^10.5.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.9.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.3",
-    "nodemon": "^3.1.9",
+    "@eslint/js": "^9.25.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "globals": "^15.15.0",
+    "nodemon": "^3.1.10",
     "pino-pretty": "^13.0.0",
     "prettier": "^3.5.3"
   }

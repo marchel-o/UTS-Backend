@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     node: true,
     commonjs: true,
@@ -9,9 +10,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  ignorePatterns: ['node_modules/', 'coverage/', 'dist/'],
   rules: {
-    'prettier/prettier': ['error'],
+    'prettier/prettier': 'error',
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'camelcase': ['error', { properties: 'never', ignoreDestructuring: true }],
+    'no-console': 'off',
   },
 };
