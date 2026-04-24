@@ -1,122 +1,66 @@
 module.exports = {
   users: [
     {
-      _id: '535250158',
-      email: 'josua@gmail.com',
+      _id: '9999',
+      email: 'admin@gmail.com',
       password: '12345678',
-      fullName: 'Josua Christian Maitimu',
-      role: 'admin',
-    },
-    {
-      _id: '535250163',
-      email: 'christofer@gmail.com',
-      password: '12345678',
-      fullName: 'Christofer Reinner',
-      role: 'admin',
-    },
-    {
-      _id: '535250182',
-      email: 'marchellinus@gmail.com',
-      password: '12345678',
-      fullName: 'Marchellinus Olliver',
-      role: 'admin',
-    },
-    {
-      _id: '535250184',
-      email: 'fikry@gmail.com',
-      password: '12345678',
-      fullName: 'Fikry Agustiyan',
-      role: 'admin',
-    },
-    {
-      _id: '535250187',
-      email: 'kelvin@gmail.com',
-      password: '12345678',
-      fullName: 'Kelvin',
+      fullName: 'Admin Utama',
       role: 'admin',
     },
     {
       _id: '66661',
-      email: 'olliver@gmail.com',
+      email: 'staff@gmail.com',
       password: '12345678',
-      fullName: 'Olliver',
-      role: 'staff',
-    },
-    {
-      _id: '66662',
-      email: 'agustiyan@gmail.com',
-      password: '12345678',
-      fullName: 'Agustiyan',
+      fullName: 'Staff IT',
       role: 'staff',
     },
     {
       _id: '33331',
-      email: 'maitimu@gmail.com',
+      email: 'user1@gmail.com',
       password: '12345678',
-      fullName: 'Maitimu',
+      fullName: 'User Satu',
       role: 'user',
     },
     {
       _id: '33332',
-      email: 'reinner@gmail.com',
+      email: 'user2@gmail.com',
       password: '12345678',
-      fullName: 'Reinner',
+      fullName: 'User Dua',
       role: 'user',
-    },
-    {
-      _id: '3333',
-      email: 'user@gmail.com',
-      password: '12345678',
-      fullName: 'user',
-      role: 'user',
-    },
-    {
-      _id: '6666',
-      email: 'staff@gmail.com',
-      password: '12345678',
-      fullName: 'staff',
-      role: 'staff',
-    },
-    {
-      _id: '9999',
-      email: 'admin@gmail.com',
-      password: '12345678',
-      fullName: 'admin',
-      role: 'admin',
     },
   ],
   tickets: [
     {
-      title: 'Masalah Jaringan R701',
-      description: 'Koneksi internet di ruangan 701 Gedung R terputus.',
+      title: 'Wi-Fi Lemah R701',
+      description:
+        'Koneksi internet di Gedung R Lt 7 Ruang 701 sering terputus saat dipakai kuliah.',
       status: 'open',
       priority: 'high',
-      category: 'network',
-      location: 'Gedung R, Lantai 7, Ruang 701',
+      location: 'Gedung R, Lt 7, Ruang 701',
     },
     {
-      title: 'Update Aplikasi LINTAR',
-      description: 'Gagal login di aplikasi LINTAR saat pengisian KRS.',
+      title: 'Proyektor Bermasalah R702',
+      description:
+        'Proyektor di Gedung R Lt 7 Ruang 702 tidak menampilkan input dari laptop dosen.',
       status: 'in_progress',
-      priority: 'urgent',
-      category: 'software',
-      location: 'Digital / LINTAR App',
+      priority: 'medium',
+      location: 'Gedung R, Lt 7, Ruang 702',
     },
     {
-      title: 'AC Rusak Gedung R1005',
-      description: 'AC di ruangan 1005 Gedung R mengeluarkan bunyi bising.',
+      title: 'AC Kurang Dingin P903',
+      description:
+        'AC di Gedung P Lt 9 Ruang 903 terasa kurang dingin ketika kelas penuh.',
       status: 'open',
       priority: 'medium',
-      category: 'facility',
-      location: 'Gedung R, Lantai 10, Ruang 1005',
+      location: 'Gedung P, Lt 9, Ruang 903',
     },
     {
-      title: 'Kebersihan Kantin Gedung P',
-      description: 'Ada tumpahan makanan di Lantai 1 Kantin Gedung P.',
-      status: 'resolved',
-      priority: 'low',
-      category: 'facility',
-      location: 'Gedung P, Lantai 1, Foodcourt',
+      title: 'Akses Pintu Lambat P906',
+      description:
+        'Card reader di pintu masuk parkir Gedung P lambat membaca ktm.',
+      status: 'open',
+      priority: 'high',
+      location: 'Gedung P, Lt 9, Ruang 906',
     },
   ],
   comments: [
@@ -124,73 +68,103 @@ module.exports = {
       ticketIndex: 0,
       userId: '33331',
       content:
-        'Koneksi mati sejak jam 08:00 WIB pagi ini, mohon segera ditangani karena ada perkuliahan.',
+        'Wi-Fi sering putus sejak awal kelas, paling terasa saat banyak perangkat tersambung.',
     },
     {
       ticketIndex: 0,
       userId: '66661',
       content:
-        'Baik, tim IT (Staff) sedang menuju ke Gedung R lantai 7 untuk melakukan pengecekan router.',
+        'Sudah dicek sementara, indikasi awal ada gangguan pada access point lantai 7.',
     },
     {
       ticketIndex: 1,
-      userId: '33332',
-      content: 'Sistem LINTAR saya muter-muter terus pas mau input KRS.',
-    },
-    {
-      ticketIndex: 1,
-      userId: '535250184',
+      userId: '66661',
       content:
-        'Sedang ada maintenance server pusat UNTAR, estimasi kembali normal dalam 2 jam. Mohon ditunggu.',
+        'Proyektor di Ruang 702 akan dicek kabel HDMI dan input source-nya terlebih dahulu.',
+    },
+    {
+      ticketIndex: 1,
+      userId: '9999',
+      content:
+        'Mohon prioritaskan karena ruang ini dipakai untuk presentasi siang ini.',
+    },
+    {
+      ticketIndex: 2,
+      userId: '33332',
+      content:
+        'Suhu ruangan terasa naik cepat saat kelas penuh, mohon dicek unit AC-nya.',
+    },
+    {
+      ticketIndex: 2,
+      userId: '66661',
+      content:
+        'Filter dan refrigerant akan diperiksa karena gejala mengarah ke pendinginan yang tidak optimal.',
+    },
+    {
+      ticketIndex: 3,
+      userId: '9999',
+      content:
+        'Pintu akses di pintu masuk parkir kadang baru terbaca setelah dicoba 2 sampai 3 kali.',
     },
     {
       ticketIndex: 3,
       userId: '33331',
-      content: 'Tumpahan makanannya dekat area lift parkir basement.',
-    },
-    {
-      ticketIndex: 3,
-      userId: '66662',
       content:
-        'Sudah dibersihkan dan dipel oleh tim cleaning service, terima kasih laporannya.',
+        'Card reader akan diperiksa karena kemungkinan ada masalah pada sensor atau koneksi ke sistem kontrol akses.',
     },
   ],
   history: [
     {
       ticketIndex: 0,
-      userId: '33331',
+      userId: '9999',
       action: 'created',
-      details: 'Tiket dibuat dengan prioritas high',
+      details: 'Tiket dibuat untuk gangguan Wi-Fi di Gedung R Lt 7 Ruang 701.',
     },
     {
-      ticketIndex: 1,
-      userId: '33332',
-      action: 'created',
-      details: 'Tiket dibuat terkait LINTAR',
-    },
-    {
-      ticketIndex: 1,
-      userId: '535250184',
+      ticketIndex: 0,
+      userId: '66661',
       action: 'status_changed',
-      details: 'Status diubah menjadi in_progress oleh admin',
+      details:
+        'Status diubah menjadi in_progress setelah pengecekan awal dilakukan.',
+    },
+    {
+      ticketIndex: 1,
+      userId: '66661',
+      action: 'created',
+      details:
+        'Tiket dibuat untuk proyektor bermasalah di Gedung R Lt 7 Ruang 702.',
+    },
+    {
+      ticketIndex: 1,
+      userId: '9999',
+      action: 'updated',
+      details: 'Catatan perbaikan ditambahkan setelah validasi input source.',
     },
     {
       ticketIndex: 2,
       userId: '33331',
       action: 'created',
-      details: 'Laporan AC rusak Gedung R',
+      details:
+        'Tiket dibuat untuk AC kurang dingin di Gedung P Lt 9 Ruang 903.',
+    },
+    {
+      ticketIndex: 2,
+      userId: '66661',
+      action: 'assigned',
+      details: 'Tiket diteruskan ke staff teknis untuk pengecekan pendinginan.',
     },
     {
       ticketIndex: 3,
-      userId: '33331',
+
+      userId: '33332',
       action: 'created',
-      details: 'Laporan fasilitas kantin Gedung P',
+      details: 'Tiket dibuat untuk kendala akses parkir.',
     },
     {
       ticketIndex: 3,
-      userId: '66662',
-      action: 'status_changed',
-      details: 'Status tiket ditutup (resolved) karena sudah dibersihkan',
+      userId: '9999',
+      action: 'resolved',
+      details: 'Masalah akses dinyatakan selesai setelah kartu diuji ulang.',
     },
   ],
 };
