@@ -1,4 +1,5 @@
 const ticketsRepository = require('./tickets-repository');
+const historyRepository = require('../history/history-repository');
 const logger = require('../../../core/logger')('app');
 
 async function getTickets() {
@@ -15,6 +16,15 @@ async function createTicket(title, description, priority, userId) {
   logger.info('Membuat tiket baru melalui repository');
   try {
     await ticketsRepository.createTicket(title, description, priority, userId);
+    if (ticket && ticket._id) {
+      await historyRepository.createHistory(
+        ticket._id,
+        userId,
+        'created',
+        'Tiket baru berhasil dibuat'
+      );
+    }
+
     return true;
   } catch (error) {
     logger.error(`Gagal membuat tiket: ${error.message}`);
