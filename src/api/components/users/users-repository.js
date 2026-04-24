@@ -37,14 +37,6 @@ async function deleteUser(_id) {
   return Users.deleteOne({ _id });
 }
 
-async function changePassword(_id, password) {
-  return Users.updateOne({ _id }, { $set: { password } });
-}
-
-async function deleteUser(_id) {
-  return Users.deleteOne({ _id });
-}
-
 module.exports = {
   getUsers,
   getUser,

@@ -1,4 +1,5 @@
 const { Tickets } = require('../../../models');
+const { Tickets, Comments, History } = require('../../../models');
 const logger = require('../../../core/logger')('app');
 
 async function getTickets() {
@@ -35,6 +36,8 @@ async function updateTicket(id, title, description, status, priority) {
 
 async function deleteTicket(id) {
   logger.info(`Eksekusi query DB: deleteTicket (${id})`);
+  await Comments.deleteMany({ ticket_id: id });
+  await History.deleteMany({ ticket_id: id });
   // PERBAIKAN: Ubah { id } menjadi { _id: id }
   return Tickets.deleteOne({ _id: id });
 }
