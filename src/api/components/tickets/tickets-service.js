@@ -15,7 +15,13 @@ async function getTicket(id) {
 async function createTicket(title, description, priority, userId) {
   logger.info('Membuat tiket baru melalui repository');
   try {
-    await ticketsRepository.createTicket(title, description, priority, userId);
+    const ticket = await ticketsRepository.createTicket(
+      title,
+      description,
+      priority,
+      userId
+    );
+
     if (ticket && ticket._id) {
       await historyRepository.createHistory(
         ticket._id,

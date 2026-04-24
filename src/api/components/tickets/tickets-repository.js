@@ -1,4 +1,3 @@
-const { Tickets } = require('../../../models');
 const { Tickets, Comments, History } = require('../../../models');
 const logger = require('../../../core/logger')('app');
 
